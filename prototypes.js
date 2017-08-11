@@ -44,3 +44,27 @@ console.log( petC );
 // ---------
 // display details
 // birthday
+
+
+
+
+function Item (a, b) {
+  this.name = a;
+  this.price = b;
+}
+
+Item.prototype.calculatePrice = function () {
+  if (this.name === 'fruit') {
+    // return this.price - (this.price * 0.05);
+    return this.price * 0.95;
+  }
+  else {
+    return this.price;
+  }
+};
+
+var ball = new Item('soccer ball', 15);
+var fruit = new Item('fruit', 99);
+
+console.log( ball.calculatePrice() );
+console.log( fruit.calculatePrice() );
